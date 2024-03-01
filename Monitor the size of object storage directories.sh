@@ -2,10 +2,9 @@
 #
 
 # Monitor the size of object storage directories
-# ADM-4046
 # YuryS
 
-LOG=/tmp/adm-4046.log
+LOG=/tmp/script.log
 
 rm $LOG
 
