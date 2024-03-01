@@ -1,13 +1,12 @@
 #!/bin/bash
 
 # Script for nmap scanning
-# ADM-4192
 # YuryS
 # 02.10.2023
 
 function variables {
-    Log=/tmp/adm-4192.log
-    server_list_file=/usr/local/sbin/adm-4192_server_list.conf
+    Log=/tmp/script.log
+    server_list_file=/usr/local/sbin/script_server_list.conf
     ZABBIX_SERVER="zabbix-proxy.clouds"
     ZABBIX_HOST=$(hostname)
     ZABBIX_KEY1="port_scan"
@@ -36,7 +35,6 @@ function action {
     rm -rf $Log $Port_count $Log_with_ports $Sort_log $result_file
     echo $(date "+%Y-%m-%d %H:%M") >> $Log
     echo "Scan log for nmap scanning" >> $Log
-    echo "https://youtrack.ru/issue/ADM-4192" >> $Log
     echo "                      " >> $Log
     server_list=$(cat $server_list_file)
     for ip in $server_list ; do
