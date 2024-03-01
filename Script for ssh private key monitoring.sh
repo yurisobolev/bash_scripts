@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Script for ssh private key monitoring
-# ADM-3544
 # YuryS
 # 27.03.2023
 
@@ -11,8 +10,8 @@ trap cleanup EXIT
 function variables {
     hostname=$(hostname)
     result=0
-    whitelist_file=/root/adm-3544_whitelist.conf    
-    keylist_file=/tmp/adm-3544_keylist.conf
+    whitelist_file=/root/whitelist.conf    
+    keylist_file=/tmp/keylist.conf
     ZABBIX_SERVER="zabbix-proxy.clouds"    
     ZABBIX_HOST=$hostname
     ZABBIX_KEY="ssh.key.check"
