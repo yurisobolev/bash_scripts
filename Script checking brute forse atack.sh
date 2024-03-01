@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Script checking brute forse atack
-# ADM-4172
 # YuryS
 # 26.07.2023
 
@@ -9,14 +8,14 @@ source /usr/local/sbin/functions
 trap cleanup EXIT
 
 function variables {
-    TICKET="adm-4172"
-    main_dir=/tmp/adm-4172/
+    TICKET="1"
+    main_dir=/tmp/1/
     Log=/var/log/radius/radius.log
     past_Log=/var/log/radius/radius.log.1
-    text=/tmp/adm-4172/text.txt
-    id_list=/tmp/adm-4172/id_list.txt
-    result_file=/tmp/adm-4172/adm-4172.log
-    ip_count_file=/tmp/adm-4172/ip_count_file.txt
+    text=/tmp/1/text.txt
+    id_list=/tmp/1/id_list.txt
+    result_file=/tmp/1/script.log
+    ip_count_file=/tmp/1/ip_count_file.txt
     result=0
     ZABBIX_SERVER="192.168.20.122"
     ZABBIX_HOST=s-system
