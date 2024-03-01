@@ -2,7 +2,6 @@
 #
 
 # Make a script to check the date of nginx septic tanks on the fronts
-# ADM-4056
 # YuryS
 
 zabbix_conf_file=/etc/zabbix/zabbix_agentd.conf
