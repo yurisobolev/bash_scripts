@@ -1,17 +1,16 @@
 #!/bin/bash
 
 # Script for backup Yandex.Disk and upload to S3
-# ADM-4134
 # YuryS
 # 06.04.2023
 
 function variables {
     today=$(date +'%Y-%m-%d')
     month=$(date +'%Y-%m')
-    backupdir=/home/adm-4134/YandexDisk_backup/$month/$today/YandexDisk_backup
-    archivedir=/home/adm-4134/YandexDisk_backup/$month/$today/YandexDisk_backup.tar
-    encryptedtar=/home/adm-4134/YandexDisk_backup/$month/$today/YandexDisk_backup.tar.gpg
-    passfile=/home/adm-4134/.gnupg/adm-4134.pgpass
+    backupdir=/home/YandexDisk_backup/$month/$today/YandexDisk_backup
+    archivedir=/home/YandexDisk_backup/$month/$today/YandexDisk_backup.tar
+    encryptedtar=/home/YandexDisk_backup/$month/$today/YandexDisk_backup.tar.gpg
+    passfile=/home/.gnupg/script.pgpass
     result=0
     ZABBIX_SERVER="zabbix-proxy.clouds"
     ZABBIX_HOST=$(hostname)
@@ -33,7 +32,7 @@ function checkReturnCode {
 }
 
 function backupYD {
-    find /home/adm-4134/YandexDisk_backup/* -type f -mtime +3 -exec rm -f {} \;
+    find /home/YandexDisk_backup/* -type f -mtime +3 -exec rm -f {} \;
     echo "Cloning YD"
     rclone copy YandexDisk:Backup $backupdir
     checkReturnCode $?
